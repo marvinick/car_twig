@@ -59,11 +59,6 @@
             return $this->make_photo;
         }
 
-        function worthBuying($max_price)
-        {
-            return $this->make_price < ($max_price + 100);
-        }
-
         function save() {
             array_push($_SESSION['list_of_cars'], $this);
         }
