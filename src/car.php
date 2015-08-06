@@ -4,14 +4,20 @@
         private $make_model;
         private $make_price;
         private $make_miles;
-        public $make_photo;
+        private $make_photo;
 
-        function __construct($car_make, $car_price, $car_miles, $car_photo)
+        function __construct($car_make, $car_price, $car_miles, $car_photo = "images/ford.jpg")
         {
             $this->make_model = $car_make;
             $this->make_price = $car_price;
             $this->make_miles = $car_miles;
             $this->make_photo = $car_photo;
+            //trying to pass empty variable in constructor
+            /*if ($car_photo = null)
+            {
+                $this->make_photo = 'images/ford.jpg';
+            }*/
+
         }
         function setMake($new_make)
         {
@@ -43,9 +49,32 @@
             return $this->make_miles;
         }
 
+        function setPhoto($new_photo)
+        {
+            $this->make_photo = $new_photo;
+        }
+
+        function getPhoto()
+        {
+            return $this->make_photo;
+        }
+
         function worthBuying($max_price)
         {
             return $this->make_price < ($max_price + 100);
+        }
+
+        function save() {
+            array_push($_SESSION['list_of_cars'], $this);
+        }
+
+        static function getAll()
+        {
+            return $_SESSION['list_of_cars'];
+        }
+
+        static function deleteAll() {
+            $_SESSION['list_of_cars'] = array();
         }
     }
 

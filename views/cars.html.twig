@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Find a Car</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    </head>
+    <body>
+        {% if cars is not empty %}
+            <ul>
+                <p>Cars matching your search:</p>
+                {% for car in cars %}
+                    <h2><li>{{ car.getMake }}</li></h2>
+                    <h4><li>{{ car.getPrice }}</li><h4>
+                    <h4><li>{{ car.getMiles }}</li></h4>
+                    <h4><li>{{ car.getPhoto }}</li></h4>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class='container'>
+            <h1>Find a Car!</h1>
+
+            <!--form to find a car by miles and price-->
+            <form action='/carresults'>
+                <div class='form-group'>
+                    <label for='price'>Enter Maximum Price:</label>
+                    <input id='price' name='price' class='form-control' type='number'>
+                </div>
+                <div class='form-group'>
+                    <label for='miles'>Enter Maximum Mileage:</label>
+                    <input id='miles' name='miles' class='form-control' type='number'>
+                </div>
+                <button type='submit' class='btn-success'>Submit</button>
+            </form>
+
+            <!--form to add a car to inventory-->
+            <form action='/add_car' method='post'>
+                <label for='make_model'>Car Make/Model</label>
+                <input id='make_model' name='make_model' type='text'>
+                <label for='make_price'>Car Make/Model</label>
+                <input id='make_price' name='make_price' type='text'>
+                <label for='make_miles'>Car Make/Model</label>
+                <input id='make_miles' name='make_miles' type='text'>
+
+                <button type='submit'>Add Car</button>
+            </form>
+
+            <!--form to delete ALL cars-->
+            <form action='/delete_cars' method='post'>
+                <button type='submit'>delete</button>
+            </form>
+        </div>
+    </body>
+</html>
