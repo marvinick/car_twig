@@ -6,7 +6,7 @@
         private $make_miles;
         private $make_photo;
 
-        function __construct($car_make, $car_price, $car_miles, $car_photo = "images/ford.jpg")
+        function __construct($car_make, $car_price, $car_miles, $car_photo = "/img/ford.jpg")
         {
             $this->make_model = $car_make;
             $this->make_price = $car_price;

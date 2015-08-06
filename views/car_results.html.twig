@@ -1,0 +1,20 @@
+<html>
+     <head>
+         <title>Your Car Dealership's Homepage</title>
+         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+     </head>
+     <body>
+         <div class='container'>
+         <h1>Your Car Dealership</h1>
+      {% if cars_matching_search is not empty %}
+        <ul>
+         {% for car in cars_matching_search %}
+             <h2><li>{{ car.getMake }}</li></h2>
+             <h4><li>{{ car.getPrice }}</li><h4>
+             <h4><li>{{ car.getMiles }}</li></h4>
+             <img src=" {{ car.getPhoto }} ">
+         {% endfor %}
+        </ul>
+      {% endif %}
+    </body>
+</html>

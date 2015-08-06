@@ -11,7 +11,7 @@
                     <h2><li>{{ car.getMake }}</li></h2>
                     <h4><li>{{ car.getPrice }}</li><h4>
                     <h4><li>{{ car.getMiles }}</li></h4>
-                    <h4><li>{{ car.getPhoto }}</li></h4>
+                    <img src=" {{ car.getPhoto }} ">
                 {% endfor %}
             </ul>
         {% endif %}
@@ -20,7 +20,7 @@
             <h1>Find a Car!</h1>
 
             <!--form to find a car by miles and price-->
-            <form action='/carresults'>
+            <form action='/car_results'>
                 <div class='form-group'>
                     <label for='price'>Enter Maximum Price:</label>
                     <input id='price' name='price' class='form-control' type='number'>
@@ -46,7 +46,7 @@
 
             <!--form to delete ALL cars-->
             <form action='/delete_cars' method='post'>
-                <button type='submit'>delete</button>
+                <button type='submit'>Clear</button>
             </form>
         </div>
     </body>
