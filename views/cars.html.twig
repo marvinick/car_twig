@@ -6,9 +6,9 @@
     <body>
         {% if cars is not empty %}
             <ul>
-                <p>Cars matching your search:</p>
+                <h3>Cars matching your search:</h3>
                 {% for car in cars %}
-                    <h2><li>{{ car.getMake }}</li></h2>
+                    <h4><li>{{ car.getMake }}</li></h4>
                     <h4><li>{{ car.getPrice }}</li><h4>
                     <h4><li>{{ car.getMiles }}</li></h4>
                     <img src=" {{ car.getPhoto }} ">
@@ -31,22 +31,28 @@
                 </div>
                 <button type='submit' class='btn-success'>Submit</button>
             </form>
-
+            <hr>
             <!--form to add a car to inventory-->
             <form action='/add_car' method='post'>
-                <label for='make_model'>Car Make/Model</label>
-                <input id='make_model' name='make_model' type='text'>
-                <label for='make_price'>Car Make/Model</label>
-                <input id='make_price' name='make_price' type='text'>
-                <label for='make_miles'>Car Make/Model</label>
-                <input id='make_miles' name='make_miles' type='text'>
+                <div class='form-group'>
+                    <p><label for='make_model'>Car Make/Model</label></p>
+                    <input id='make_model' name='make_model' type='text'>
+                </div>
+                <div class='form-group'>
+                    <p><label for='make_price'>Car Price</label></p>
+                    <input id='make_price' name='make_price' type='text'>
+                </div>
+                <div class='form-group'>
+                    <p><label for='make_miles'>Car Mileage</label></p>
+                    <input id= 'make_miles' name='make_miles' type='text'>
+                </div>
 
-                <button type='submit'>Add Car</button>
+                <p><button type='submit' class='btn-primary'>Add Car</button></p>
             </form>
-
+            <hr>
             <!--form to delete ALL cars-->
             <form action='/delete_cars' method='post'>
-                <button type='submit'>Clear</button>
+                <button type='submit' class="btn-danger" >Clear</button>
             </form>
         </div>
     </body>

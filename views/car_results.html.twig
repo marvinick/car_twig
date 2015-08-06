@@ -7,12 +7,17 @@
          <div class='container'>
          <h1>Your Car Dealership</h1>
         <ul>
-         {% for car in matched_cars %}
-             <h2><li>{{ car.getMake }}</li></h2>
-             <h4><li>{{ car.getPrice }}</li><h4>
-             <h4><li>{{ car.getMiles }}</li></h4>
-             <img src=" {{ car.getPhoto }} ">
-         {% endfor %}
+        {% if matched_cars is not empty %}
+            {% for car in matched_cars %}
+                 <h2><li>{{ car.getMake }}</li></h2>
+                 <h4><li>{{ car.getPrice }}</li><h4>
+                 <h4><li>{{ car.getMiles }}</li></h4>
+                 <img src=" {{ car.getPhoto }} ">
+            {% endfor %}
+        {% else %}
+            <h4>No cars match your search</h4>
+        {% endif %}
         </ul>
+        <p><a href='/'>View all cars for sale.</a></p>
     </body>
 </html>

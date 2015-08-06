@@ -4,10 +4,10 @@
 
     session_start();
     //constructing cars
-    $porsche = new Car('2014 Porsche 911', 114991, 7861, 'images/porsche.jpg');
-    $ford = new Car('2011 Ford F450', 55995, 14241, 'images/ford.jpg');
-    $lexus = new Car('2013 Lexus RX 350', 44700, 20000, 'images/lexus.jpg');
-    $mercedes = new Car('Mercedes Benz CLS550', 39900, 37979, 'images/mercedes.jpg');
+    $porsche = new Car('2014 Porsche 911', 114991, 7861, "../img/porsche.jpg");
+    $ford = new Car('2011 Ford F450', 55995, 14241, 'img/ford.jpg');
+    $lexus = new Car('2013 Lexus RX 350', 44700, 20000, 'img/lexus.jpg');
+    $mercedes = new Car('Mercedes Benz CLS550', 39900, 37979, '/img/mercedes.jpg');
 
     if (empty($_SESSION['list_of_cars'])) {
         $_SESSION['list_of_cars'] = array($porsche, $ford, $lexus, $mercedes);

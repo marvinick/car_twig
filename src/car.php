@@ -12,11 +12,6 @@
             $this->make_price = $car_price;
             $this->make_miles = $car_miles;
             $this->make_photo = $car_photo;
-            //trying to pass empty variable in constructor
-            /*if ($car_photo = null)
-            {
-                $this->make_photo = 'images/ford.jpg';
-            }*/
 
         }
         function setMake($new_make)
